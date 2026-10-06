@@ -1,0 +1,95 @@
+/* ===== Instituto Técnico Andino: hoja de estilos externa ===== */
+
+/* 1. Variables: los colores se definen una vez y se reutilizan */
+:root {
+  --azul-oscuro: #0f2a43;
+  --azul: #1f5fa8;
+  --amarillo: #ffc93c;
+  --gris: #f4f6f8;
+}
+
+/* 2. Base: letra y color general */
+body {
+  font-family: system-ui, Arial, sans-serif;
+  color: #1c2733;
+}
+h1, h2, h3 { color: var(--azul-oscuro); }
+
+/* 3. Menú */
+.barra { background: var(--azul-oscuro); }
+
+/* 4. Inicio: GRID de 2 columnas (texto + ficha) */
+.hero {
+  background: var(--azul-oscuro);
+  color: white;
+  padding: 8rem 0 4rem;
+}
+.hero h1 { color: white; font-size: 2.5rem; }
+.hero-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+.ficha {
+  background: white;
+  color: #1c2733;
+  padding: 1.5rem;
+  border-top: 6px solid var(--amarillo);
+  border-radius: 10px;
+}
+
+/* 5. Secciones */
+.seccion { padding: 4rem 0; }
+.gris { background: var(--gris); }
+
+/* 6. Beneficios: FLEXBOX (los 3 bloques en fila) */
+.beneficios {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.beneficio {
+  flex: 1 1 200px;
+  border-top: 3px solid var(--azul-oscuro);
+  padding-top: 1rem;
+}
+
+/* 7. Botones de Bootstrap con nuestro color */
+.btn-primary {
+  --bs-btn-bg: var(--azul);
+  --bs-btn-border-color: var(--azul);
+  --bs-btn-hover-bg: var(--azul-oscuro);
+  --bs-btn-hover-border-color: var(--azul-oscuro);
+}
+
+/* 8. Registro: GRID de 2 columnas (pasos + formulario) */
+.registro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* 9. Caja de código de la simulación */
+.codigo {
+  background: var(--azul-oscuro);
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  white-space: pre-wrap;
+}
+
+/* 10. Pie de página */
+.pie {
+  background: var(--azul-oscuro);
+  color: white;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+/* 11. Responsive: en pantallas chicas, una sola columna */
+@media (max-width: 768px) {
+  .hero-grid, .registro-grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 1.8rem; }
+}
